@@ -73,7 +73,14 @@ li:last-child{
 	}
 `
 
-const AddFileButton = styled.div<AddFileProps>`
+interface AddFileButtonProps {
+	isFull: boolean
+	fileCount: number
+	disabled?: boolean
+	theme?: any  // или тип темы, если есть
+ }
+
+const AddFileButton = styled.div<AddFileButtonProps>`
   min-width: 180px;
   min-height: 120px;
   position: relative;
