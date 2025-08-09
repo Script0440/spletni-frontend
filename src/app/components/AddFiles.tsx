@@ -123,7 +123,13 @@ cursor: not-allowed;
 	font-weight:500;
   }
 `;
-const AddFiles = ({documents,addFile,deleteFile}) => {
+
+interface AddFilesProps {
+	documents: any[]; // желательно заменить `any` на точный тип документа
+	addFile: (file: File) => void;
+	deleteFile: (id: string) => void;
+ }
+ const AddFiles: React.FC<AddFilesProps> = ({ documents, addFile, deleteFile }) => {
 	const {themeObject} = useTheme()
   return (
 	 <Container>
