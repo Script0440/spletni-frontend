@@ -150,7 +150,7 @@ const VideoGallery: React.FC<Props> = ({ videos,theme }) => {
   const count = videos.length;
   if (count === 0) return null;
 
-  const baseUrl = 'http://localhost:3001/';
+  const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
   const handleVideoClick = (index: number) => {
     setStartIndex(index);

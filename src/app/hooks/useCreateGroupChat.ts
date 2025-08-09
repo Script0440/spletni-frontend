@@ -24,7 +24,7 @@ export function useCreateGroupChat() {
         formData.append('files', avatar);
       }
 
-      const response = await axios.post('http://localhost:3001/chat/create-group', formData, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/chat/create-group`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

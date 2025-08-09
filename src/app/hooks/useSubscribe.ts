@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001'; // твой адрес API
+const API_URL = `${process.env.NEXT_PUBLIC_BASE_URL}`; // твой адрес API
 
 export const useSubscribe = () => {
   const queryClient = useQueryClient();

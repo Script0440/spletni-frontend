@@ -429,7 +429,7 @@ function groupMessagesByDate(messages: any[]) {
 					<h4>Закреплённое сообщение</h4>
 					<section style={{display:'flex',alignItems:"center",gap:"10px"}}>
 					{
-						pinMessageData.images.slice(0,3).map((m)=> <img style={{objectFit:'cover'}} width={50} height={50} src={`http://localhost:3001/${m.imageUrl}`}/>)
+						pinMessageData.images.slice(0,3).map((m)=> <img style={{objectFit:'cover'}} width={50} height={50} src={`${process.env.NEXT_PUBLIC_BASE_URL}/${m.imageUrl}`}/>)
 					}
 					<h5>{pinMessageData.content.length > 50 ? pinMessageData.content.slice(0,50) + "..." : pinMessageData.content}</h5>
 					</section>

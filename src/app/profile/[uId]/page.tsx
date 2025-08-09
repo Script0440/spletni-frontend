@@ -138,7 +138,7 @@ const page = () => {
 	 <StyledProfile>
 		<Profile theme={themeObject}>
 			<BgContainer>
-				<BgProfile theme={themeObject} src={'http://localhost:3001/uploads/bg-default-2.png'}/>
+				<BgProfile theme={themeObject} src={`${process.env.NEXT_PUBLIC_BASE_URL}/uploads/bg-default-2.png`}/>
 			</BgContainer>
 				<ContentProfile>
 				<InfoProfile theme={themeObject}>

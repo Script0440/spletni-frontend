@@ -7,7 +7,7 @@ export const useCreateChat = () => {
  
 	const mutation = useMutation({
 	  mutationFn: async (payload: { userIdOne: string; userIdTwo: string }) => {
-		 const res = await axios.post('http://localhost:3001/chat', payload);
+		 const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/chat`, payload);
 		 return res.data;
 	  },
 	  onSuccess: () => {

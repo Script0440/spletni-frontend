@@ -177,7 +177,7 @@ const Message = ({handleDelete,theme,isPin,isArchive,chat,archiveChat,unarchiveC
 const page = () => {
 	const {themeObject} = useTheme();
 	const {user, isLoading, error} = useUser();
-	const { emit, on, off } = useSocket('http://localhost:3001'); // ⬅️ переместили выше
+	const { emit, on, off } = useSocket(`${process.env.NEXT_PUBLIC_BASE_URL}`)
 	const {deleteChat,archiveChat,unarchiveChat,chats,isLoading:isLoadingChats,error:chatError,unpinChat,
 		pinChat} = useChats()
 	const [isOpenNewChat,setIsOpenNewChat] = useState(false);

@@ -115,7 +115,7 @@ const CallModel = () => {
   const identity = 'user1'; // Заменить на уникальное имя
 
   const startCall = async () => {
-    const res = await fetch(`http://localhost:3001/livekit/token?identity=${identity}&room=${roomName}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/livekit/token?identity=${identity}&room=${roomName}`);
     const data = await res.json();
     setToken(data.token);
     setStarted(true);

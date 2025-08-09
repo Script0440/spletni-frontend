@@ -12,7 +12,7 @@ export const useManyUsers = (usersIds: string[]) => {
         return [];
       }
 
-      const { data } = await axios.post(`http://localhost:3001/user/getManyUsersByIds`, {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/user/getManyUsersByIds`, {
         userIds: stableIds,
       });
 

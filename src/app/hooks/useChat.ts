@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useUser } from './useUser';
 
-const BASE_URL = 'http://localhost:3001/chat';
+const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/chat`;
 
 export const useChat = (chatId: string) => {
   const { user } = useUser();

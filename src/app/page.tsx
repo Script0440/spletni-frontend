@@ -21,7 +21,7 @@ export default function Home() {
 	const handleGetUser = async (e: React.FormEvent) => {
   e.preventDefault();
   try {
-	const res = await axios.get('http://localhost:3001/user/getUsers');
+	const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/user/getUsers`);
     console.log('Ответ сервера:', res.data);
 	 setUsers(res.data.users)
   } catch (err) {

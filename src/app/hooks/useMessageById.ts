@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3001/messages';
+const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/messages`;
 
 export const useMessageById = (chatId: string, messageId: string) => {
   const queryClient = useQueryClient();

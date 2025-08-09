@@ -252,12 +252,12 @@ const ChatMedia = ({media})=>{
 			media?.map((m)=> m.mediaType === "image"
 			?
 			<MediaItem key={m.mediaUrl} onClick={()=> setShowImageViewer(true)}>
-				<img src={`http://localhost:3001/${m.mediaUrl}`}/>
+				<img src={`${process.env.NEXT_PUBLIC_BASE_URL}/${m.mediaUrl}`}/>
 			</MediaItem>
 			:
 			<MediaItem onClick={()=> setShowVideoViewer(true)}>
 				<video
-				src={`http://localhost:3001/${m.mediaUrl}`}/>
+				src={`${process.env.NEXT_PUBLIC_BASE_URL}/${m.mediaUrl}`}/>
 			</MediaItem>)
 		}
 	</ChatMedias>)
@@ -309,7 +309,7 @@ const ChatSettings = ({chat,updateAvatar,kickUser,addUser,isAddingUser,isKicking
 		<Info>
 			<ChatInfoStyled theme={themeObject}>
 			<ChatAvatar>
-				<img src={newAvatarUrl || `http://localhost:3001/${chat.avatar}`}/>
+				<img src={newAvatarUrl || `${process.env.NEXT_PUBLIC_BASE_URL}/${chat.avatar}`}/>
 				<FileButton onChange={(e)=> setNewAvatar(e.target.files?.[0] || null)} type='file'/>
 			</ChatAvatar>
 			<div style={{display:"flex",flexDirection:'column'}}>

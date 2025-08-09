@@ -121,8 +121,8 @@ const VideosViewer: React.FC<VideosViewerProps> = ({ videos, onClose, startCount
         )}
 
         <MainVideo
-          src={`http://localhost:3001/${currentVideo.videoUrl}`}
-			 poster={currentVideo.posterUrl ? `http://localhost:3001/${currentVideo.posterUrl}` : undefined}
+          src={`${process.env.NEXT_PUBLIC_BASE_URL}/${currentVideo.videoUrl}`}
+			 poster={currentVideo.posterUrl ? `${process.env.NEXT_PUBLIC_BASE_URL}/${currentVideo.posterUrl}` : undefined}
           controls
           autoPlay
         />

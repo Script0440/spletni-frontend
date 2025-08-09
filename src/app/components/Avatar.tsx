@@ -33,7 +33,7 @@ if (error) return <div>Ошибка: {error.message}</div>;
 
   return (
 	 <StyledAvatar onClick={onClick ? onClick : ()=> router.push(`/profile/${userId ? userId : user.UUId}`)} style={styled} theme={themeObject}>
-		<img width={size} height={size} src={url ? `http://localhost:3001/${url}` : `http://localhost:3001/${user.avatar}`} alt="Avatar" />
+		<img width={size} height={size} src={url ? `${process.env.NEXT_PUBLIC_BASE_URL}/${url}` : `${process.env.NEXT_PUBLIC_BASE_URL}/${user.avatar}`} alt="Avatar" />
 	 </StyledAvatar>
   )
 }

@@ -121,11 +121,11 @@ const AddedFilesChat: React.FC<Props> = ({ documents, messageFiles, onClick }) =
           <ImageWrapper key={`msg-${index}`} area={area}>
             {file.imageUrl ? (
               <ImageBox>
-                <img src={`http://localhost:3001/${file.imageUrl}`} alt="Uploaded" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/${file.imageUrl}`} alt="Uploaded" />
               </ImageBox>
             ) : file.videoUrl ? (
               <ImageBox>
-                <video src={`http://localhost:3001/${file.videoUrl}`} muted />
+                <video src={`${process.env.NEXT_PUBLIC_BASE_URL}/${file.videoUrl}`} muted />
               </ImageBox>
             ) : null}
           </ImageWrapper>

@@ -139,7 +139,7 @@ const ImageGallery: React.FC<Props> = ({ images }) => {
     setShowImageViewer(true);
   };
 
-  const baseUrl = 'http://localhost:3001/';
+  const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
   // Универсальный рендеринг для изображений
   const renderImage = (

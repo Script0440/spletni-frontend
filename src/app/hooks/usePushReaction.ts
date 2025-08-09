@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { useUser } from './useUser';
 
-const BASE_URL = 'http://localhost:3001/messages';
+const BASE_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/messages`;
 
 export const usePushReaction = (chatId: string | number) => {
   const queryClient = useQueryClient();

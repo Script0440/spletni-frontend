@@ -104,7 +104,7 @@ export default function RootLayout({
 }>) {
 	const {themeObject} = useTheme();
 
-	connectSocket('http://localhost:3001');
+	connectSocket(`${process.env.NEXT_PUBLIC_BASE_URL}`);
 
   return (
     <html lang="en">

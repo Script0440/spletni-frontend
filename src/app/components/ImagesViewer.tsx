@@ -136,7 +136,7 @@ const ImagesViewer: React.FC<ImagesViewerProps> = ({ images, onClose, startCount
         )}
 
         <MainImage
-          src={`http://localhost:3001/${images[current].imageUrl}`}
+          src={`${process.env.NEXT_PUBLIC_BASE_URL}/${images[current].imageUrl}`}
           alt={`Image ${current + 1} of ${total}`}
           scale={scale}
           draggable={false}

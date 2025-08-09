@@ -9,7 +9,7 @@ export const useLogout = () => {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await axios.post('http://localhost:3001/auth/logout', {}, { withCredentials: true });
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/logout`, {}, { withCredentials: true });
       if (!res.data) {
         throw new Error('Не удалось выйти из системы');
       }

@@ -7,7 +7,7 @@ export const usePinMessage = (chatId: string) => {
   // Закрепить сообщение
   const pinMutation = useMutation({
     mutationFn: async (messageId: string) => {
-      const res = await axios.post(`http://localhost:3001/chat/pin/${chatId}`, {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/chat/pin/${chatId}`, {
         messageId,
       });
       return res.data;
@@ -20,7 +20,7 @@ export const usePinMessage = (chatId: string) => {
   // Открепить сообщение
   const unpinMutation = useMutation({
     mutationFn: async () => {
-      const res = await axios.delete(`http://localhost:3001/chat/pin/${chatId}`);
+      const res = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/chat/pin/${chatId}`);
       return res.data;
     },
     onSuccess: () => {
