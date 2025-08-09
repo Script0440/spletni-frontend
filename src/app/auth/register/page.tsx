@@ -81,26 +81,26 @@ const page = () => {
         type="text"
         placeholder="FirstName"
         value={firstName}
-        onChange={(e: React.FormEvent<HTMLInputElement>) => setFirstName(e.target.value)}
+        onChange={(e: React.FormEvent<HTMLInputElement>) => setFirstName(e.currentTarget.value)}
       />
       <Input
         type="text"
         placeholder="LastName"
         value={lastName}
-        onChange={(e: React.FormEvent<HTMLInputElement>) => setLastName(e.target.value)}
+        onChange={(e: React.FormEvent<HTMLInputElement>) => setLastName(e.currentTarget.value)}
       />
       <Input
         type="email"
         placeholder="Email"
         value={email}
-		  onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.target.value)}
+		  onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)}
       />
 		<label htmlFor="">
 			<Input
 			type={showPass ? "text" : "password"}
 			placeholder="Password"
 			value={password}
-			onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.target.value)}
+			onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)}
 			/>
 {		password.length > 0 && <span onClick={()=> setShowPass(!showPass)}>{showPass ? "Скрыть" : "Показать"}</span>}
 		</label>
@@ -109,7 +109,7 @@ const page = () => {
 			type={showPass ? "text" : "password"}
 			placeholder="Repeat password"
 			value={repeatPassword}
-			onChange={(e: React.FormEvent<HTMLInputElement>) => setRepeatPassword(e.target.value)}
+			onChange={(e: React.FormEvent<HTMLInputElement>) => setRepeatPassword(e.currentTarget.value)}
 			/>
 		</label>
 		  <Sex>

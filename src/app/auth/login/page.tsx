@@ -61,13 +61,13 @@ const page = () => {
         type="email"
         placeholder="Email"
         value={email}
-		  onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.target.value)}
+		  onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)}
       />
       <Input
         type="password"
         placeholder="Password"
         value={password}
-        onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.target.value)}
+        onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)}
       />
 		<StyledSubmit theme={themeObject}>
 			<div>
