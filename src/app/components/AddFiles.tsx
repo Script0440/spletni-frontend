@@ -7,6 +7,11 @@ import FileButton from './FileButton';
 import { LuUpload } from "react-icons/lu";
 import { useTheme } from '../hooks/useTheme';
 
+interface AddFileProps {
+	isFull?: boolean;
+	fileCount: number;
+ }
+
 const Image = styled.img`
 	width:100px;
 	height:100px;
@@ -68,7 +73,7 @@ li:last-child{
 	}
 `
 
-const AddFileButton = styled.div<{ fileCount: number }>`
+const AddFileButton = styled.div<AddFileProps>`
   min-width: 180px;
   min-height: 120px;
   position: relative;

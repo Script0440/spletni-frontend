@@ -17,6 +17,11 @@ import AddFiles from './AddFiles';
 import FileButton from './FileButton';
 import AddedFilesChat from './AddedFilesChat';
 
+
+interface SumbolLimitProps {
+	isFull?: boolean;
+ }
+
 const SendMessage = styled.div`
 
 	border:1px solid ${(props)=>props.isActive ? props.theme.accentColor : props.theme.color};
@@ -101,7 +106,7 @@ const PickMessage = styled.section`
 	}
 `
 
-const SymbolLimit = styled.span`
+const SymbolLimit = styled.span<SumbolLimitProps>`
 	position:absolute;
 	right:10px;
 	bottom:0;
