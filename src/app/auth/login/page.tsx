@@ -43,7 +43,7 @@ const page = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/auth/login", {
+      const res = await axios.post(`${process.env.BASE_URL}/auth/login`, {
         email,
         password,
       }, { withCredentials: true });

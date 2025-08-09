@@ -10,8 +10,8 @@ export const useUser = (uId?: string) => {
 	  queryKey,
 	  queryFn: async () => {
 		 const endpoint = uId
-			? `http://localhost:3001/user/getUser?uId=${uId}`
-			: 'http://localhost:3001/user/getMe';
+			? `${process.env.BASE_URL}/user/getUser?uId=${uId}`
+			: `${process.env.BASE_URL}/user/getMe`;
  
 		 const res = await axios.get(endpoint, { withCredentials: true });
 		 if (!res.data || !res.data.user) {
@@ -73,7 +73,7 @@ export const useUser = (uId?: string) => {
 	const mutation = useMutation({
 	  mutationFn: async (formData: FormData) => {
 		 const res = await axios.post(
-			'http://localhost:3001/user/updateMe',
+			`${process.env.BASE_URL}/user/updateMe`,
 			formData,
 			{
 			  withCredentials: true,
