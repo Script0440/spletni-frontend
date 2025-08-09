@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { ReactNode, CSSProperties, MouseEventHandler } from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../hooks/useTheme'
 
-const StyledButton = styled.button`
+interface StyledButtonProps {
+	isActive?: boolean
+ }
+
+const StyledButton = styled.button<StyledButtonProps>`
 	background:transparent;
 	border:transparent;
 	margin:0px;
@@ -18,7 +22,14 @@ const StyledButton = styled.button`
 	color:${(props)=> props.isActive ? props.theme.color : props.theme.hoverBgGray}
 `
 
-const ButtonHover = ({style,children,onClick,isActive}) => {
+interface ButtonHoverProps {
+  style?: CSSProperties
+  children: ReactNode
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  isActive?: boolean
+}
+
+const ButtonHover: React.FC<ButtonHoverProps> = ({ style, children, onClick, isActive }) => {
 	const {themeObject} = useTheme()
   return (
 	 <StyledButton isActive={isActive} onClick={onClick} theme={themeObject} style={style}>
